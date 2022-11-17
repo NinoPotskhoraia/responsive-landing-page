@@ -50,22 +50,23 @@ const change = function(){
 
 }
 
-window.addEventListener('DOMContentLoaded', function(){
-    change();
-})
+window.addEventListener('DOMContentLoaded', change);
+
 
 nextBtn.addEventListener('click', function(){
     current++;
-    if(current > collection.length - 1){
+    if(current === collection.length - 1){
         current = 0;
     }
+    
     change();
 })
 
 prevBtn.addEventListener('click', function(){
     current--;
-    if(current < 0){
+    if(current === 0){
         current = collection.length - 1;
     }
+    
     change();
 })
